@@ -18,6 +18,16 @@ Zoomer application for Linux.
 $ sudo apt-get install libgl1-mesa-dev libx11-dev libxext-dev libxrandr-dev
 ```
 
+### Wayland
+
+Boomer can now capture Wayland sessions through the desktop portal. Install a screenshot helper that works with your compositor (one of the following is enough):
+
+- `grim` (wlroots compositors; requires `xdg-desktop-portal-wlr`)
+- `gnome-screenshot` (GNOME)
+- `spectacle` (KDE Plasma)
+
+When `WAYLAND_DISPLAY` is set Boomer will automatically use the portal backend. You can override the selection with `--backend portal` or force the legacy path with `--backend x11`.
+
 ## Quick Start
 
 ```console
@@ -41,7 +51,7 @@ This will enable reloading the shaders with `Ctrl+R`. The shader files (`frag.gl
 ## Controls
 
 | Control                                   | Description                                                   |
-|-------------------------------------------|---------------------------------------------------------------|
+| ----------------------------------------- | ------------------------------------------------------------- |
 | <kbd>0</kbd>                              | Reset the application state (position, scale, velocity, etc). |
 | <kbd>q</kbd> or <kbd>ESC</kbd>            | Quit the application.                                         |
 | <kbd>r</kbd>                              | Reload configuration.                                         |
@@ -67,7 +77,7 @@ You can generate a new config at `$HOME/.config/boomer/config` with `$ boomer --
 Supported parameters:
 
 | Name           | Description                                        |
-|----------------|----------------------------------------------------|
+| -------------- | -------------------------------------------------- |
 | min_scale      | The smallest it can get when zooming out           |
 | scroll_speed   | How quickly you can zoom in/out by scrolling       |
 | drag_friction  | How quickly the movement slows down after dragging |
@@ -77,11 +87,11 @@ Supported parameters:
 
 Experimental or unstable features can be enabled by passing the following flags to `nimble build` command:
 
-| Flag          | Description                                                                                                                    |
-|---------------|--------------------------------------------------------------------------------------------------------------------------------|
-| `-d:live`     | Live image update. See issue [#26].                                                                                            |
-| `-d:mitshm`   | Enables faster Live image update using MIT-SHM X11 extension. Should be used along with `-d:live` to have an effect             |
-| `-d:select`   | Application lets the user to click on te window to "track" and it will track that specific window instead of the whole screen. |
+| Flag        | Description                                                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `-d:live`   | Live image update. See issue [#26].                                                                                            |
+| `-d:mitshm` | Enables faster Live image update using MIT-SHM X11 extension. Should be used along with `-d:live` to have an effect            |
+| `-d:select` | Application lets the user to click on te window to "track" and it will track that specific window instead of the whole screen. |
 
 ## NixOS Overlay
 

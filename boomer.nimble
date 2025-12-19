@@ -5,4 +5,4 @@ license     = "MIT"
 srcDir      = "src"
 bin         = @["boomer"]
 
-requires "nim >= 0.18.0", "x11 >= 1.1", "opengl >= 1.2.3"
+requires "nim >= 0.18.0", "x11 >= 1.1", "opengl >= 1.2.3", "stb_image >= 2.5"
