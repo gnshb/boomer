@@ -1,3 +1,16 @@
+### Wayland
+
+Boomer can now capture Wayland sessions through the desktop portal. Install a screenshot helper that works with your compositor (one of the following is enough):
+
+- `grim` (wlroots compositors; requires `xdg-desktop-portal-wlr`)
+- `gnome-screenshot` (GNOME)
+- `spectacle` (KDE Plasma)
+
+When `WAYLAND_DISPLAY` is set Boomer will automatically use the portal backend. You can override the selection with `--backend portal` or force the legacy path with `--backend x11`.
+
+---
+
+
 [![Tsoding](https://img.shields.io/badge/twitch.tv-tsoding-purple?logo=twitch&style=for-the-badge)](https://www.twitch.tv/tsoding)
 [![Build Status](https://travis-ci.org/tsoding/boomer.svg?branch=master)](https://travis-ci.org/tsoding/boomer)
 
@@ -17,16 +30,6 @@ Zoomer application for Linux.
 ```console
 $ sudo apt-get install libgl1-mesa-dev libx11-dev libxext-dev libxrandr-dev
 ```
-
-### Wayland
-
-Boomer can now capture Wayland sessions through the desktop portal. Install a screenshot helper that works with your compositor (one of the following is enough):
-
-- `grim` (wlroots compositors; requires `xdg-desktop-portal-wlr`)
-- `gnome-screenshot` (GNOME)
-- `spectacle` (KDE Plasma)
-
-When `WAYLAND_DISPLAY` is set Boomer will automatically use the portal backend. You can override the selection with `--backend portal` or force the legacy path with `--backend x11`.
 
 ## Quick Start
 
